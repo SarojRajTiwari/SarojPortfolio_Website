@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<!-- Portfolio v2026-05-31 16:43:49 UTC -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saroj Raj Tiwari | QA Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- SCROLL PROGRESS BAR -->
+<div id="scroll-progress-bar"></div>
+
+<!-- COMMAND PALETTE -->
+<div id="cmd-palette-overlay" onclick="if(event.target===this)closeCmdPalette()">
+  <div id="cmd-palette">
+    <div id="cmd-search-wrap">
+      <span id="cmd-search-icon">⌘</span>
+      <input id="cmd-input" placeholder="Jump to section..." autocomplete="off" oninput="filterCmd(this.value)" onkeydown="cmdKeyNav(event)">
+      <span class="cmd-hint">ESC to close</span>
+    </div>
+    <div id="cmd-list"></div>
+    <div class="cmd-footer">
+      <span><span class="cmd-key">↑↓</span> navigate</span>
+      <span><span class="cmd-key">↵</span> go</span>
+      <span><span class="cmd-key">ESC</span> close</span>
+    </div>
+  </div>
+</div>
+<div id="cmd-shortcut-hint">Press Ctrl+K to open command palette</div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-srt">S<span>R</span>T</div>
+  <div class="loader-tagline">// Software QA Engineer</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- PARTICLES -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a class="nav-logo" href="#hero">SRT<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#blog">Articles</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#education">Education</a></li>
+  </ul>
+  <button id="nav-ask-saroj-btn" class="nav-ask-saroj" onclick="scToggle()" aria-label="Ask Saroj AI" title="Ask Saroj AI">
+    <span class="nas-border-anim"></span>
+    <span class="nas-glow-ring"></span>
+    <span class="nas-alarm-ring"></span>
+    <span class="nas-alarm-ring-2"></span>
+    <span class="nas-inner">
+      <span class="nas-dot"></span>
+      <span class="nas-ai-core">
+        <svg class="nas-hex" viewBox="0 0 24 24" fill="none"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.8"/></svg>
+      </span>
+      <span class="nas-text-wrap"><span class="nas-label">Ask</span> <em>Saroj</em></span>
+      <span class="nas-tag">AI</span>
+    </span>
+  </button>
+  <a href="#contact" class="nav-cta">Hire Me</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMobile()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <button class="mob-close-btn" onclick="closeMobile()" aria-label="Close menu">✕ Close</button>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#experience" onclick="closeMobile()">Experience</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#skills" onclick="closeMobile()">Skills</a>
+  <a href="#testimonials" onclick="closeMobile()">Reviews</a>
+  <a href="#blog" onclick="closeMobile()">Articles</a>
+  <a href="#certifications" onclick="closeMobile()">Certs</a>
+  <a href="#education" onclick="closeMobile()">Education</a>
+  <a href="#contact" class="mob-cta" onclick="closeMobile()">Hire Me →</a>
+  <button class="mob-ask-saroj-btn" onclick="closeMobile(); scOpenChat();" aria-label="Ask Saroj AI">
+    <span class="mob-ask-dot"></span>
+    Ask <em>Saroj</em> AI
+    <span class="mob-ask-tag">AI</span>
+  </button>
+</div>
+
+<!-- MOBILE FAB -->
+<button id="mob-ask-saroj-fab" onclick="scOpenChat()" aria-label="Ask Saroj AI">
+  <span class="fab-ring"></span>
+  <span class="fab-inner">
+    <svg class="fab-hex" viewBox="0 0 24 24" fill="none"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.8"/></svg>
+    <span class="fab-badge">AI</span>
+  </span>
+  <span class="fab-tooltip">💬 Ask Saroj AI</span>
+</button>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-chip">
+      <span class="ow-pulse"></span>
+      Open to QA Opportunities
+      <span class="ow-badge">NOW</span>
+    </div>
+    <h1 class="hero-name">Saroj Raj<span class="line2">Tiwari</span></h1>
+    <div class="hero-role-typewriter">// <span id="typewriter-text"></span><span class="typewriter-cursor"></span></div>
+    <p class="hero-desc">
+      <span id="yearsExp">4</span>+ years of experience ensuring software excellence in the US healthcare domain. Specializing in functional, automation, and API testing.
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">🏥 US Healthcare</span>
+      <span class="hero-tag">⚙️ QA Automation</span>
+      <span class="hero-tag">🔌 API Testing</span>
+      <span class="hero-tag">🗄️ SQL</span>
+      <span class="hero-tag">🔐 Data De-ID</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-navy">Let's Talk →</a>
+      <a href="#experience" class="btn-teal-outline">View Work</a>
+      <button class="resume-hero-btn" onclick="openResumeModal()" title="View My Resume">
+        <span class="btn-spark sp1">★</span>
+        <span class="btn-spark sp2">★</span>
+        <span class="btn-spark sp3">★</span>
+        <span class="btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 2L4 14h7l-1 8 9-12h-7l2-8z" fill="var(--teal)" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+          </svg>
+        </span>
+        <span class="btn-label-text">Resume</span>
+      </button>
+      <a href="./qa-lab.html" class="qa-lab-btn" title="QA Learn &amp; Practice Lab">
+        <span class="qa-lab-spark qsp1">✦</span>
+        <span class="qa-lab-spark qsp2">✦</span>
+        <span class="qa-lab-icon">🧪</span>
+        <span class="qa-lab-text">QA Lab</span>
+        <span class="qa-lab-badge">NEW</span>
+      </a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="photo-frame">
+      <div class="photo-glow"></div>
+      <img src="./photo2_web.jpg" loading="eager" decoding="async" style="object-fit:cover;width:100%;height:100%;display:block;" alt="Saroj Raj Tiwari — Software QA Engineer">
+      <div class="float-card fc-left">
+        <div class="fc-num"><span id="heroYrs">4</span>+</div>
+        <div class="fc-lbl"><span class="fc-dot"></span>Years Exp.</div>
+      </div>
+      <div class="float-card fc-right">
+        <div class="fc-num">100<span style="font-size:1rem">%</span></div>
+        <div class="fc-lbl"><span class="fc-dot"></span>Quality First</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <span class="marquee-item">Functional Testing <span>✦</span></span>
+    <span class="marquee-item">Regression Testing <span>✦</span></span>
+    <span class="marquee-item">API Testing <span>✦</span></span>
+    <span class="marquee-item">Selenium Automation <span>✦</span></span>
+    <span class="marquee-item">US Healthcare Domain <span>✦</span></span>
+    <span class="marquee-item">SQL Queries <span>✦</span></span>
+    <span class="marquee-item">Data De-Identification <span>✦</span></span>
+    <span class="marquee-item">JMeter Performance <span>✦</span></span>
+    <span class="marquee-item">Postman · Newman <span>✦</span></span>
+    <span class="marquee-item">Veracode Security <span>✦</span></span>
+    <span class="marquee-item">Functional Testing <span>✦</span></span>
+    <span class="marquee-item">Regression Testing <span>✦</span></span>
+    <span class="marquee-item">API Testing <span>✦</span></span>
+    <span class="marquee-item">Selenium Automation <span>✦</span></span>
+    <span class="marquee-item">US Healthcare Domain <span>✦</span></span>
+    <span class="marquee-item">SQL Queries <span>✦</span></span>
+    <span class="marquee-item">Data De-Identification <span>✦</span></span>
+    <span class="marquee-item">JMeter Performance <span>✦</span></span>
+    <span class="marquee-item">Postman · Newman <span>✦</span></span>
+    <span class="marquee-item">Veracode Security <span>✦</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-wrap">
+    <div class="about-layout">
+      <div class="about-img-col reveal-left">
+        <div class="about-img-wrap">
+          <img src="./photo1_web.jpg" loading="lazy" style="object-fit:cover;width:100%;height:100%;display:block;" alt="Saroj Raj Tiwari">
+          <div class="about-img-overlay"></div>
+          <div class="about-img-badge">Based in Kathmandu 🇳🇵</div>
+        </div>
+        <div class="about-decor-box"></div>
+      </div>
+      <div class="about-col reveal-right">
+        <div class="s-label">01 — About Me</div>
+        <h2 class="s-title">A QA Engineer Who<br><em>Loves Breaking Things</em></h2>
+        <p>I'm <strong>Saroj Raj Tiwari</strong>, a Software QA Engineer with <strong id="aboutYrs">4</strong>+ years of hands-on experience ensuring software quality in the <strong>US healthcare domain</strong>.</p>
+        <p>At <strong>Cedar Gate Technologies</strong>, I test Payment Technology applications — running functional, regression, smoke, and API tests to keep production bulletproof. I've grown from Associate QA to leading juniors and independently managing full QA lifecycles.</p>
+        <div class="about-quote">
+          "I independently handled QA for a <strong>Data De-Identification project</strong> in collaboration with the Jetstore team — deepening my SQL skills and delivering the product end-to-end as a solo QA lead."
+        </div>
+        <p>Beyond code and bugs, I was a <strong>Computer Science Lecturer</strong> at New Millennium School, where I taught, mentored, and built curriculum — proof that I love helping others grow.</p>
+        <div class="about-metrics">
+          <div class="metric-box">
+            <div class="m-num"><span id="metricYrs">4</span><span class="accent">+</span></div>
+            <div class="m-lbl">Years Exp.</div>
+          </div>
+          <div class="metric-box">
+            <div class="m-num">3<span class="accent">+</span></div>
+            <div class="m-lbl">Projects</div>
+          </div>
+          <div class="metric-box">
+            <div class="m-num">5<span class="accent">+</span></div>
+            <div class="m-lbl">Certifications</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-wrap">
+    <div class="s-label">02 — Experience</div>
+    <h2 class="s-title">Work <em>History</em></h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <div class="tl-role">Software QA Engineer</div>
+              <div class="tl-co">Cedar Gate Technologies · Nepal</div>
+            </div>
+            <span class="tl-date">Feb 2024 – Present</span>
+          </div>
+          <ul class="tl-list">
+            <li>Functional testing of Payment Technology application for US healthcare domain</li>
+            <li>Regression testing to ensure stability and software compatibility</li>
+            <li>Smoke testing for new releases — catching critical issues early in dev cycle</li>
+            <li>Bug reporting using Veracode and various testing tools</li>
+            <li>Collaborated cross-functionally for timely issue resolution</li>
+            <li>Trained and mentored new junior QA engineers</li>
+            <li>Conducted comprehensive API Testing using Postman & Newman</li>
+          </ul>
+          <div class="tl-tags">
+            <span class="tl-tag">Functional Testing</span>
+            <span class="tl-tag">Regression</span>
+            <span class="tl-tag">API Testing</span>
+            <span class="tl-tag">Veracode</span>
+            <span class="tl-tag">Postman</span>
+            <span class="tl-tag">Mentorship</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <div class="tl-role">Associate Software QA Engineer</div>
+              <div class="tl-co">Cedar Gate Technologies · Nepal</div>
+            </div>
+            <span class="tl-date">Feb 2023 – Feb 2024</span>
+          </div>
+          <ul class="tl-list">
+            <li>Executed functional, regression, and smoke testing of US healthcare Payment Technology app</li>
+            <li>Used Veracode to identify and report software problems and errors</li>
+            <li>Worked with cross-functional teams to resolve issues promptly</li>
+          </ul>
+          <div class="tl-tags">
+            <span class="tl-tag">Smoke Testing</span>
+            <span class="tl-tag">Bug Reporting</span>
+            <span class="tl-tag">Healthcare Domain</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <div class="tl-role">Computer Science Lecturer</div>
+              <div class="tl-co">New Millennium School · Nepal</div>
+            </div>
+            <span class="tl-date">Jan 2022 – Feb 2023</span>
+          </div>
+          <ul class="tl-list">
+            <li>Developed tailored learning plans, assessments, exams, and practical lab activities</li>
+            <li>Mentored students and handled administrative tasks efficiently</li>
+            <li>Demonstrated strong communication, adaptability, and teamwork</li>
+          </ul>
+          <div class="tl-tags">
+            <span class="tl-tag">Teaching</span>
+            <span class="tl-tag">Curriculum Design</span>
+            <span class="tl-tag">Mentorship</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-wrap">
+    <div class="s-label">03 — Projects</div>
+    <h2 class="s-title">Notable <em>Work</em></h2>
+    <div class="proj-grid">
+      <div class="proj-card reveal">
+        <div class="proj-icon-wrap">🏥</div>
+        <span class="proj-status live"><span class="proj-status-dot"></span>LIVE</span>
+        <div class="proj-name">Payment Technology Application</div>
+        <div class="proj-role">QA Engineer · Cedar Gate Technologies</div>
+        <p class="proj-desc">End-to-end QA of a US healthcare payment platform — functional, regression, smoke, and API testing across multiple release cycles. Ensured production stability for a critical healthcare payment system used across the US.</p>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-icon-wrap">🔐</div>
+        <span class="proj-status completed"><span class="proj-status-dot"></span>COMPLETED</span>
+        <div class="proj-name">Data De-Identification Project</div>
+        <div class="proj-role">Independent QA Lead · Jetstore Team Collaboration</div>
+        <p class="proj-desc">Independently led QA for a data de-identification product in collaboration with the Jetstore team. Managed the complete QA lifecycle — from test planning to delivery. Deepened SQL skills to validate data transformations and ensure compliance.</p>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-icon-wrap">📡</div>
+        <span class="proj-status in-progress"><span class="proj-status-dot"></span>IN PROGRESS</span>
+        <div class="proj-name">EDI Healthcare Integration Testing</div>
+        <div class="proj-role">QA Engineer · Cedar Gate Technologies</div>
+        <p class="proj-desc">Applied specialized EDI (Electronic Data Interchange) expertise to test healthcare data integrations, ensuring accurate and compliant data exchange between systems in the US healthcare ecosystem.</p>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-icon-wrap">🎓</div>
+        <span class="proj-status completed"><span class="proj-status-dot"></span>COMPLETED</span>
+        <div class="proj-name">CS Education Curriculum</div>
+        <div class="proj-role">Lecturer · New Millennium School</div>
+        <p class="proj-desc">Designed and delivered a comprehensive computer science curriculum with practical labs and mentoring programs — bridging theory and real-world application for the next generation of tech professionals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-wrap">
+    <div class="skills-layout">
+      <div class="reveal-left">
+        <div class="s-label">04 — Skills</div>
+        <h2 class="s-title">My <em>Toolkit</em></h2>
+        <p>A QA engineer who doesn't just find bugs — I understand systems, write SQL queries, stress-test APIs, and mentor teams.</p>
+        <div class="skill-bars">
+          <div class="skill-bar-item">
+            <div class="sb-header"><span class="sb-name">Functional & Regression Testing</span><span class="sb-pct">95%</span></div>
+            <div class="sb-track"><div class="sb-fill" data-width="95"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="sb-header"><span class="sb-name">API Testing (Postman/Newman)</span><span class="sb-pct">90%</span></div>
+            <div class="sb-track"><div class="sb-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="sb-header"><span class="sb-name">Selenium Automation</span><span class="sb-pct">82%</span></div>
+            <div class="sb-track"><div class="sb-fill" data-width="82"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="sb-header"><span class="sb-name">SQL & Data Validation</span><span class="sb-pct">85%</span></div>
+            <div class="sb-track"><div class="sb-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="sb-header"><span class="sb-name">Performance Testing (JMeter)</span><span class="sb-pct">78%</span></div>
+            <div class="sb-track"><div class="sb-fill" data-width="78"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="sb-header"><span class="sb-name">US Healthcare Domain</span><span class="sb-pct">92%</span></div>
+            <div class="sb-track"><div class="sb-fill" data-width="92"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="skills-right reveal-right">
+        <div class="skill-cat">
+          <div class="sk-cat-title">Testing Methods</div>
+          <div class="sk-pills">
+            <span class="sk-pill">Functional Testing</span>
+            <span class="sk-pill">Regression Testing</span>
+            <span class="sk-pill">Smoke Testing</span>
+            <span class="sk-pill">API Testing</span>
+            <span class="sk-pill">Performance Testing</span>
+            <span class="sk-pill">Exploratory Testing</span>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <div class="sk-cat-title">Tools & Platforms</div>
+          <div class="sk-pills sk-tools">
+            <span class="sk-pill sk-tool-pill"><img src="https://cdn.simpleicons.org/selenium/43B02A" class="tool-icon" alt="Selenium">Selenium</span>
+            <span class="sk-pill sk-tool-pill"><img src="https://cdn.simpleicons.org/postman/FF6C37" class="tool-icon" alt="Postman">Postman</span>
+            <span class="sk-pill sk-tool-pill"><img src="https://cdn.simpleicons.org/newman/FF6C37" class="tool-icon" onerror="this.style.display='none'" alt="Newman">Newman</span>
+            <span class="sk-pill sk-tool-pill"><img src="https://cdn.simpleicons.org/apachejmeter/D22128" class="tool-icon" alt="JMeter">JMeter</span>
+            <span class="sk-pill sk-tool-pill"><img src="https://cdn.simpleicons.org/jira/0052CC" class="tool-icon" alt="Jira">Jira</span>
+            <span class="sk-pill sk-tool-pill"><img src="https://cdn.simpleicons.org/mysql/4479A1" class="tool-icon" alt="SQL">SQL</span>
+            <span class="sk-pill sk-tool-pill"><img src="https://cdn.simpleicons.org/git/F05032" class="tool-icon" alt="Git">Git</span>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <div class="sk-cat-title">Data & Documentation</div>
+          <div class="sk-pills">
+            <span class="sk-pill">SQL Queries</span>
+            <span class="sk-pill">Test Planning</span>
+            <span class="sk-pill">Test Cases</span>
+            <span class="sk-pill">Bug Reports</span>
+            <span class="sk-pill">Test Documentation</span>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <div class="sk-cat-title">Domain Expertise</div>
+          <div class="sk-pills">
+            <span class="sk-pill">US Healthcare</span>
+            <span class="sk-pill">Payment Technology</span>
+            <span class="sk-pill">Data De-Identification</span>
+            <span class="sk-pill">EDI</span>
+            <span class="sk-pill">HIPAA Workflows</span>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <div class="sk-cat-title">Languages</div>
+          <div class="sk-pills sk-lang-pills">
+            <span class="sk-pill sk-lang-pill"><span class="lang-flag">🇳🇵</span>Nepali <em>Native</em></span>
+            <span class="sk-pill sk-lang-pill"><span class="lang-flag">🇬🇧</span>English <em>Professional</em></span>
+            <span class="sk-pill sk-lang-pill"><span class="lang-flag">🇮🇳</span>Hindi <em>Conversational</em></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-wrap">
+    <div class="s-label">05 — Recommendations</div>
+    <h2 class="s-title">What My <em>Team Says</em></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">"Saroj consistently delivered thorough test coverage that caught critical bugs before they reached production. His understanding of our healthcare domain and attention to edge cases made him an indispensable part of the QA team."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JS</div>
+          <div>
+            <div class="testimonial-name">Jenish Saiju</div>
+            <div class="testimonial-role">Manager · Cedar Gate Technologies</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">"As team lead, I've seen many QA engineers — Saroj stands out for his systematic approach and ownership. He never lets a release go without being confident in quality. His API testing skills with Postman are top-notch."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">BK</div>
+          <div>
+            <div class="testimonial-name">Biplav Khanal</div>
+            <div class="testimonial-role">Team Lead · Cedar Gate Technologies</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">"Saroj is a reliable colleague who brings thoroughness and professionalism to every test cycle. His SQL skills for data validation and his ability to document bugs clearly saved the team hours of debugging time."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">PT</div>
+          <div>
+            <div class="testimonial-name">Prerna Thakuri Shah</div>
+            <div class="testimonial-role">Senior QA Engineer · Cedar Gate Technologies</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">"Working with Saroj has been a great learning experience. He approaches testing with genuine curiosity and always shares knowledge with the team. His regression suites are solid and well-documented."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">PH</div>
+          <div>
+            <div class="testimonial-name">Pratik Henjan</div>
+            <div class="testimonial-role">Software QA Engineer · Cedar Gate Technologies</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">"Saroj has a great eye for detail and a calm, methodical approach to finding issues. He communicates bugs clearly and works collaboratively with developers to resolve them fast. A true team player."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AC</div>
+          <div>
+            <div class="testimonial-name">Aditya Chaudhary</div>
+            <div class="testimonial-role">Software QA Engineer · Cedar Gate Technologies</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">"Saroj's QA contributions have directly improved our software stability. His understanding of both frontend and backend systems allows him to trace bugs accurately and work effectively with the engineering team."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">DP</div>
+          <div>
+            <div class="testimonial-name">Dhiraj Phuyal</div>
+            <div class="testimonial-role">Software Engineer · Cedar Gate Technologies</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">"Saroj has strong technical instincts for an IT professional. He understands systems end-to-end, which makes his testing comprehensive and effective. His work ethic and dedication to quality are commendable."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">BS</div>
+          <div>
+            <div class="testimonial-name">Bimugdha Satyal</div>
+            <div class="testimonial-role">IT Engineer · Mero-Network</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">"Saroj was an exceptional educator who brought real industry experience into the classroom. His students gained practical knowledge in computer science fundamentals and always left sessions inspired to learn more."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">PS</div>
+          <div>
+            <div class="testimonial-name">Pramesh Subedi</div>
+            <div class="testimonial-role">HOD of Computer Department · New Millennium School</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="testimonial-add-btn" onclick="openQuoteModal()">
+      ✍️ &nbsp; Know Saroj? Add your recommendation
+    </button>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="section-wrap">
+    <div class="s-label">06 — Articles</div>
+    <h2 class="s-title">Thoughts on <em>QA</em></h2>
+    <div class="blog-grid">
+      <div class="blog-card reveal">
+        <div class="blog-tag">📋 QA Strategy</div>
+        <div class="blog-title">How I Test EDI Healthcare Data: A Field Guide</div>
+        <div class="blog-excerpt">EDI (Electronic Data Interchange) in healthcare is complex — 837 claims, 835 remittances, 270/271 eligibility checks. Here's how I approach testing these integrations systematically without missing critical data flows.</div>
+        <div class="blog-meta">
+          <span>📅 Coming Soon</span>
+          <span>⏱ 6 min read</span>
+        </div>
+        <div class="blog-coming-soon">✦ Publishing soon</div>
+      </div>
+      <div class="blog-card reveal">
+        <div class="blog-tag">🔐 Data Privacy</div>
+        <div class="blog-title">Data De-Identification & PHI: How We Meet Healthcare Security Standards</div>
+        <div class="blog-excerpt">Protected Health Information (PHI) must never leak — not in test data, not in logs, not in transit. In this article I walk through how our de-identification pipeline strips, masks, and generalizes PHI fields while we validate that every transformation is complete, irreversible, and HIPAA-compliant end-to-end.</div>
+        <div class="blog-meta">
+          <span>📅 Coming Soon</span>
+          <span>⏱ 9 min read</span>
+        </div>
+        <div class="blog-coming-soon">✦ Publishing soon</div>
+      </div>
+      <div class="blog-card reveal">
+        <div class="blog-tag">🗄️ Data Validation</div>
+        <div class="blog-title">SQL for QA Engineers: Queries Every Tester Should Know</div>
+        <div class="blog-excerpt">You don't need to be a DBA, but knowing how to write JOINs, aggregations, and subqueries can transform your data validation from guesswork into certainty. A practical guide for QA professionals.</div>
+        <div class="blog-meta">
+          <span>📅 Coming Soon</span>
+          <span>⏱ 7 min read</span>
+        </div>
+        <div class="blog-coming-soon">✦ Publishing soon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-wrap">
+    <div class="s-label">07 — Certifications</div>
+    <h2 class="s-title">Professional <em>Credentials</em></h2>
+    <div class="certs-grid">
+      <div class="cert-card reveal" onclick="openCertModal('qa')" title="Click to view certificate">
+        <div class="cert-icon-wrap">🤖</div>
+        <div>
+          <div class="cert-title">QA Automation Training</div>
+          <div class="cert-sub">Selenium & Automation Tools</div>
+        </div>
+      </div>
+      <div class="cert-card reveal" onclick="openCertModal('edi')" title="Click to view certificate">
+        <div class="cert-icon-wrap">🔗</div>
+        <div>
+          <div class="cert-title">EDI Workshop Certification</div>
+          <div class="cert-sub">Electronic Data Interchange — Healthcare</div>
+        </div>
+      </div>
+      <div class="cert-card reveal" onclick="openCertModal('sql')" title="Click to view certificate">
+        <div class="cert-icon-wrap">🗄️</div>
+        <div>
+          <div class="cert-title">SQL for Testers</div>
+          <div class="cert-sub">Database Querying & Data Validation</div>
+        </div>
+      </div>
+      <div class="cert-card reveal" onclick="openCertModal('proofpoint')" title="Click to view certificate">
+        <div class="cert-icon-wrap">📬</div>
+        <div>
+          <div class="cert-title">Postman Certification</div>
+          <div class="cert-sub">API Testing & Newman CLI</div>
+        </div>
+      </div>
+      <div class="cert-card reveal" onclick="openCertModal('security')" title="Click to view certificate">
+        <div class="cert-icon-wrap">🌐</div>
+        <div>
+          <div class="cert-title">American Business Communication & Culture</div>
+          <div class="cert-sub">ABC&C Program — US Business Norms</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-wrap">
+    <div class="s-label">08 — Education</div>
+    <h2 class="s-title">Academic <em>Background</em></h2>
+    <div class="edu-grid">
+      <div class="edu-card reveal" onclick="openEduModal('mcs')" title="Click for details & transcript">
+        <span class="edu-badge">🎓 In Progress</span>
+        <div class="edu-degree">Master of Computer Science (MCS)</div>
+        <div class="edu-inst">Phoenix College — Lincoln University</div>
+        <p class="edu-desc">Advanced study in computer science covering software engineering, systems design, and modern computing paradigms. Expected graduation 2026.</p>
+        <div style="margin-top:.8rem;font-size:.78rem;color:#0bc5a4;font-weight:600;">🔍 Click to view details & transcript</div>
+      </div>
+      <div class="edu-card reveal" onclick="openEduModal('bsc')" title="Click for details & transcript">
+        <span class="edu-badge" style="background:var(--accent);">✅ Completed</span>
+        <div class="edu-degree">B.Sc. Computer Science & Information Technology</div>
+        <div class="edu-inst">Trinity International College — Tribhuvan University</div>
+        <p class="edu-desc">Foundation in computer science, information technology, software development, and IT systems. Built core programming and analytical skills. Graduated 2020.</p>
+        <div style="margin-top:.8rem;font-size:.78rem;color:#0bc5a4;font-weight:600;">🔍 Click to view details & transcript</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-bg-shape"></div>
+  <div class="contact-bg-shape2"></div>
+  <div class="section-wrap">
+    <div class="s-label">09 — Contact</div>
+    <h2 class="s-title">Let's <em>Connect</em></h2>
+    <div class="contact-layout">
+      <div class="contact-info reveal-left">
+        <p>Open to new opportunities, collaborations, and conversations about software quality. I'd love to hear from you.</p>
+        <div class="contact-links">
+          <a href="mailto:sarojrajtiwari50@gmail.com" class="c-link">
+            <div class="c-link-icon">📧</div>
+            <div>
+              <div class="c-link-label">Email</div>
+              sarojrajtiwari50@gmail.com
+              <button class="copy-email-btn" onclick="event.preventDefault();copyEmail(this)" title="Copy email">📋 Copy</button>
+            </div>
+          </a>
+          <a href="tel:+9779860214708" class="c-link">
+            <div class="c-link-icon">📞</div>
+            <div>
+              <div class="c-link-label">Phone</div>
+              +977 9860214708
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/saroj-raj-tiwari-44a37726b/" target="_blank" rel="noopener" class="c-link">
+            <div class="c-link-icon">💼</div>
+            <div>
+              <div class="c-link-label">LinkedIn</div>
+              saroj-raj-tiwari
+            </div>
+          </a>
+          <a href="https://github.com/sarojrajtiwari" target="_blank" rel="noopener" class="c-link">
+            <div class="c-link-icon">🐙</div>
+            <div>
+              <div class="c-link-label">GitHub</div>
+              sarojrajtiwari
+            </div>
+          </a>
+          <div class="c-link" style="cursor:default;">
+            <div class="c-link-icon">📍</div>
+            <div>
+              <div class="c-link-label">Location</div>
+              Jadibuti, Kathmandu, Nepal
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="contact-form">
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form-inner" id="contactForm">
+<input type="hidden" name="form-name" value="contact">
+<p hidden><input name="bot-field"></p>
+<div class="form-title">Send Me a Message</div>
+<div class="form-sub">Your message goes directly to my inbox.</div>
+<div class="form-row">
+<div class="form-group">
+<label>Your Name *</label>
+<input type="text" name="name" id="cf-name" placeholder="John Doe" required>
+</div>
+<div class="form-group">
+<label>Your Email *</label>
+<input type="email" name="email" id="cf-email" placeholder="john@example.com" required>
+</div>
+</div>
+<div class="form-group">
+<label>Subject *</label>
+<input type="text" name="subject" id="cf-subject" placeholder="Job Opportunity / Collaboration / Hello!" required>
+</div>
+<div class="form-group">
+<label>Message *</label>
+<textarea name="message" id="cf-message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+</div>
+<button class="btn-send" type="submit" id="cf-submit">Send Message ✉️</button>
+</form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">SRT<span>.</span></div>
+    <div class="footer-links">
+      <a href="https://github.com/sarojrajtiwari" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/saroj-raj-tiwari-44a37726b/" target="_blank">LinkedIn</a>
+      <a href="mailto:sarojrajtiwari50@gmail.com">Email</a>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Saroj Raj Tiwari. All rights reserved.</span>
+    <span class="footer-status">
+      <span class="footer-status-dot"></span>
+      Available for QA Opportunities
+    </span>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
+
+
+
+
+<!-- ===== EDUCATION MODALS ===== -->
+
+<!-- BSc Modal -->
+<div class="modal-overlay" id="modal-bsc">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-bsc')">✕</button>
+    <span class="modal-badge green">✅ Completed — 2020</span>
+    <div class="modal-title">B.Sc. Computer Science &amp; Information Technology</div>
+    <div class="modal-inst">Trinity International College — Tribhuvan University, Kathmandu</div>
+    <div class="modal-divider"></div>
+    <div class="modal-section-title">Key Details</div>
+    <div class="modal-info-grid">
+      <div class="modal-info-item"><div class="modal-info-label">Programme</div><div class="modal-info-value">B.Sc. CSIT</div></div>
+      <div class="modal-info-item"><div class="modal-info-label">Duration</div><div class="modal-info-value">4 Years (8 Semesters)</div></div>
+      <div class="modal-info-item"><div class="modal-info-label">Percentage</div><div class="modal-info-value">65.79%</div></div>
+      <div class="modal-info-item"><div class="modal-info-label">T.U. Reg. No.</div><div class="modal-info-value">5-2-354-36-2016</div></div>
+      <div class="modal-info-item"><div class="modal-info-label">Passed Year</div><div class="modal-info-value">2020</div></div>
+    </div>
+    <div class="modal-section-title">Core Subjects Covered</div>
+    <div class="modal-subjects">
+      <span class="modal-subject-tag">Data Structures & Algorithms</span>
+      <span class="modal-subject-tag">Database Management</span>
+      <span class="modal-subject-tag">Operating Systems</span>
+      <span class="modal-subject-tag">Computer Networks</span>
+      <span class="modal-subject-tag">Software Engineering</span>
+      <span class="modal-subject-tag">Artificial Intelligence</span>
+      <span class="modal-subject-tag">Web Technologies</span>
+      <span class="modal-subject-tag">Cloud Computing</span>
+      <span class="modal-subject-tag">Advanced Java Programming</span>
+      <span class="modal-subject-tag">Cryptography</span>
+    </div>
+    <div class="modal-desc">Comprehensive foundation in computer science and information technology at Tribhuvan University. Covered programming, systems design, networking, and software development across 8 semesters with a strong focus on analytical and technical skills.</div>
+    <div class="modal-btn-row">
+      <a href="./transcript_bachelor.pdf" target="_blank" class="modal-btn primary">📄 View Full Transcript</a>
+      <button class="modal-btn secondary" onclick="closeModal('modal-bsc')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- MCS Modal -->
+<div class="modal-overlay" id="modal-mcs">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-mcs')">✕</button>
+    <span class="modal-badge prog">🎓 In Progress — Expected 2026</span>
+    <div class="modal-title">Master of Computer Science (MCS)</div>
+    <div class="modal-inst">Phoenix College of Management — Lincoln University College, Malaysia</div>
+    <div class="modal-divider"></div>
+    <div class="modal-section-title">Key Details</div>
+    <div class="modal-info-grid">
+      <div class="modal-info-item"><div class="modal-info-label">Programme</div><div class="modal-info-value">MCS</div></div>
+      <div class="modal-info-item"><div class="modal-info-label">Intake</div><div class="modal-info-value">March 2024</div></div>
+      <div class="modal-info-item"><div class="modal-info-label">Current CGPA</div><div class="modal-info-value">3.94 / 4.00</div></div>
+      <div class="modal-info-item"><div class="modal-info-label">Status</div><div class="modal-info-value">Semesters 1–3 Completed</div></div>
+      <div class="modal-info-item"><div class="modal-info-label">Student ID</div><div class="modal-info-value">LC0003002258</div></div>
+      <div class="modal-info-item"><div class="modal-info-label">Expected</div><div class="modal-info-value">2026</div></div>
+    </div>
+    <div class="modal-section-title">Subjects Completed</div>
+    <div class="modal-subjects">
+      <span class="modal-subject-tag">Software Quality Testing</span>
+      <span class="modal-subject-tag">Artificial Intelligence</span>
+      <span class="modal-subject-tag">Cyber Security</span>
+      <span class="modal-subject-tag">Data Analytics & Visualization</span>
+      <span class="modal-subject-tag">Data Warehousing & Big Data</span>
+      <span class="modal-subject-tag">Cloud Computing</span>
+      <span class="modal-subject-tag">Digital Forensics</span>
+      <span class="modal-subject-tag">Software Project Management</span>
+      <span class="modal-subject-tag">Design & Analysis of Algorithms</span>
+      <span class="modal-subject-tag">Technopreneurship</span>
+    </div>
+    <div class="modal-desc">Advanced postgraduate programme with a CGPA of 3.94/4.00 across three completed semesters. Achieved Distinction in all subjects in Semesters 2 and 3, with strong focus on software quality, security, and modern computing.</div>
+    <div class="modal-btn-row">
+      <a href="./transcript_masters.pdf" target="_blank" class="modal-btn primary">📄 View Transcript</a>
+      <button class="modal-btn secondary" onclick="closeModal('modal-mcs')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CERTIFICATION MODALS ===== -->
+
+<!-- QA Automation -->
+<div class="modal-overlay" id="modal-cert-qa">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-cert-qa')">✕</button>
+    <span class="modal-badge green">✅ Certified — June 2023</span>
+    <div class="modal-title">QA Automation Training</div>
+    <div class="modal-inst">Cedar Gate Technologies — Issued by Mentors Club</div>
+    <div class="modal-divider"></div>
+    <div class="cert-details-row">
+      <div class="cert-detail-pill">Certificate No: <span>155970733</span></div>
+      <div class="cert-detail-pill">Duration: <span>20 Hours</span></div>
+      <div class="cert-detail-pill">Date: <span>June 08, 2023</span></div>
+    </div>
+    <div class="modal-desc">Successfully completed 20 hours of hands-on training on QA Automation, covering Selenium WebDriver and automation testing tools used in professional software testing environments.</div>
+    <div class="modal-btn-row">
+      <a href="./cert_qa_automation.pdf" target="_blank" class="modal-btn primary">📄 View Certificate</a>
+      <button class="modal-btn secondary" onclick="closeModal('modal-cert-qa')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- EDI Workshop -->
+<div class="modal-overlay" id="modal-cert-edi">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-cert-edi')">✕</button>
+    <span class="modal-badge green">✅ Certified — June 2023</span>
+    <div class="modal-title">EDI Workshop Certification</div>
+    <div class="modal-inst">Cedar Gate Technologies — Mentors Club</div>
+    <div class="modal-divider"></div>
+    <div class="cert-details-row">
+      <div class="cert-detail-pill">Certificate No: <span>155968248</span></div>
+      <div class="cert-detail-pill">Duration: <span>6.5 Hours</span></div>
+      <div class="cert-detail-pill">Period: <span>Jun 2 – Jun 29, 2023</span></div>
+    </div>
+    <div class="modal-desc">Completed a 6.5-hour workshop on Electronic Data Interchange (EDI) Basics, covering healthcare EDI standards and data interchange formats used in US healthcare systems.</div>
+    <div class="modal-btn-row">
+      <a href="./cert_edi.pdf" target="_blank" class="modal-btn primary">📄 View Certificate</a>
+      <button class="modal-btn secondary" onclick="closeModal('modal-cert-edi')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- SQL for Testers -->
+<div class="modal-overlay" id="modal-cert-sql">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-cert-sql')">✕</button>
+    <span class="modal-badge blue">✅ Certified — May 2024</span>
+    <div class="modal-title">SQL for Testers</div>
+    <div class="modal-inst">LinkedIn Learning</div>
+    <div class="modal-divider"></div>
+    <div class="cert-details-row">
+      <div class="cert-detail-pill">Platform: <span>LinkedIn Learning</span></div>
+      <div class="cert-detail-pill">Duration: <span>1hr 33min</span></div>
+      <div class="cert-detail-pill">Completed: <span>May 18, 2024</span></div>
+    </div>
+    <div class="modal-desc">Completed LinkedIn Learning course covering SQL fundamentals for software testers, including database querying, data validation techniques, and test data management using SQL.</div>
+    <div class="modal-section-title" style="margin-top:1rem;">Skills Covered</div>
+    <div class="modal-subjects">
+      <span class="modal-subject-tag">Database Testing</span>
+      <span class="modal-subject-tag">SQL Queries</span>
+      <span class="modal-subject-tag">Data Validation</span>
+    </div>
+    <div class="modal-btn-row" style="margin-top:1rem;">
+      <a href="./cert_sql.jpg" target="_blank" class="modal-btn primary">📄 View Certificate</a>
+      <button class="modal-btn secondary" onclick="closeModal('modal-cert-sql')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Proofpoint -->
+<div class="modal-overlay" id="modal-cert-proofpoint">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-cert-proofpoint')">✕</button>
+    <span class="modal-badge green">✅ Certified — February 2025</span>
+    <div class="modal-title">2025 Proofpoint Overview Training</div>
+    <div class="modal-inst">Cedar Gate Technologies</div>
+    <div class="modal-divider"></div>
+    <div class="cert-details-row">
+      <div class="cert-detail-pill">Issuer: <span>Cedar Gate Technologies</span></div>
+      <div class="cert-detail-pill">Completed: <span>Feb 04, 2025</span></div>
+    </div>
+    <div class="modal-desc">Completed the 2025 Proofpoint Overview Training at Cedar Gate Technologies, covering email security, threat protection, and security awareness in enterprise environments.</div>
+    <div style="background:#f0fdf4;border:1px dashed #86efac;border-radius:10px;padding:.9rem 1.1rem;margin-bottom:1.2rem;font-size:.84rem;color:#166534;">📋 Certificate not yet uploaded — will be available soon.</div>
+    <div class="modal-btn-row">
+      <button class="modal-btn secondary" onclick="closeModal('modal-cert-proofpoint')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Security Policy -->
+<div class="modal-overlay" id="modal-cert-security">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-cert-security')">✕</button>
+    <span class="modal-badge green">✅ Certified — November 2025</span>
+    <div class="modal-title">2025 Cedar Gate Annual Security Policy Training</div>
+    <div class="modal-inst">Cedar Gate Technologies</div>
+    <div class="modal-divider"></div>
+    <div class="cert-details-row">
+      <div class="cert-detail-pill">Issuer: <span>Cedar Gate Technologies</span></div>
+      <div class="cert-detail-pill">Completed: <span>Nov 17, 2025</span></div>
+      <div class="cert-detail-pill">Edition: <span>2.0 Revamped</span></div>
+    </div>
+    <div class="modal-desc">Completed the 2025 Annual Security Policy Training (Revamped Edition) at Cedar Gate Technologies, covering updated security policies, data protection, compliance requirements, and best practices for healthcare IT security.</div>
+    <div style="background:#f0fdf4;border:1px dashed #86efac;border-radius:10px;padding:.9rem 1.1rem;margin-bottom:1.2rem;font-size:.84rem;color:#166534;">📋 Certificate not yet uploaded — will be available soon.</div>
+    <div class="modal-btn-row">
+      <button class="modal-btn secondary" onclick="closeModal('modal-cert-security')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- DARK MODE TOGGLE -->
+<button class="dark-toggle" id="darkToggle" onclick="toggleDark()" title="Toggle dark/light mode">🌙</button>
+
+<!-- Hidden Netlify form for quote submissions (required for Netlify to detect) -->
+<form name="quote-submission" netlify netlify-honeypot="bot-field" style="display:none">
+  <input name="bot-field">
+  <input name="name">
+  <input name="role">
+  <input name="relation">
+  <textarea name="quote"></textarea>
+</form>
+
+<!-- QUOTE MODAL -->
+<div class="quote-modal-overlay" id="quoteModalOverlay">
+  <div class="quote-modal-box">
+    <button class="quote-modal-close" onclick="closeQuoteModal()">✕</button>
+    <div id="quoteFormArea">
+      <div class="quote-modal-title">Add Your Recommendation</div>
+      <div class="quote-modal-sub">Your words help recruiters understand what it's like to work with Saroj. Your quote will be reviewed before going live on the site.</div>
+      <div class="qm-group">
+        <label>Your Name *</label>
+        <input type="text" id="qm-name" placeholder="e.g. John Smith">
+      </div>
+      <div class="qm-group">
+        <label>Your Role / Title *</label>
+        <input type="text" id="qm-role" placeholder="e.g. Senior QA Engineer · 3 yrs experience">
+      </div>
+      <div class="qm-group">
+        <label>Your Relationship with Saroj *</label>
+        <select id="qm-relation">
+          <option value="">Select...</option>
+          <option>Manager / Supervisor</option>
+          <option>Team Lead</option>
+          <option>Colleague / Peer</option>
+          <option>Direct Report</option>
+          <option>Client</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="qm-group">
+        <label>Your Recommendation *</label>
+        <textarea id="qm-quote" rows="4" placeholder="Share a specific example or observation about Saroj's work, skills, or impact..."></textarea>
+      </div>
+      <button class="qm-submit" onclick="submitQuote()">Submit Recommendation ✉️</button>
+    </div>
+    <div class="qm-success" id="quoteSuccess">
+      <div class="qm-success-icon">🎉</div>
+      <div class="qm-success-heading">Great, thank you!!</div>
+      <div class="qm-success-text">Your quote about Saroj will be uploaded to the site shortly. Keep visiting to see it live!</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MESSAGE SENT SUCCESS POPUP ===== -->
+<div class="success-overlay" id="successOverlay">
+  <div class="success-box">
+    <button class="modal-close" onclick="closeSuccess()" style="top:.8rem;right:.8rem;">✕</button>
+    <div class="success-check">✅</div>
+    <div class="success-heading">Message Sent!</div>
+    <div class="success-subtext">Thank you for reaching out. Saroj will get back to you as soon as possible.</div>
+    <button class="success-close-btn" onclick="closeSuccess()">Close</button>
+  </div>
+</div>
+
+
+<!-- ===== RESUME MODAL ===== -->
+<div class="resume-overlay" id="resumeOverlay">
+<div class="resume-modal">
+
+  <!-- TOP BAR -->
+  <div class="rm-top-bar">
+    <button class="rm-close" onclick="closeResumeModal()">✕</button>
+    <div class="rm-name">Saroj Raj Tiwari</div>
+    <div class="rm-title">Software QA Engineer &nbsp;·&nbsp; US Healthcare Domain &nbsp;·&nbsp; Kathmandu, Nepal</div>
+    <div class="rm-contact-row">
+      <span class="rm-contact-chip">📧 sarojrajtiwari50@gmail.com</span>
+      <span class="rm-contact-chip">🔗 linkedin.com/in/sarojrajtiwari</span>
+      <span class="rm-contact-chip">📍 Kathmandu, Nepal</span>
+      <span class="rm-contact-chip">🌐 sarojrajtiwari.netlify.app</span>
+    </div>
+    <div class="rm-stats">
+      <div class="rm-stat"><div class="rm-stat-num">4+</div><div class="rm-stat-lbl">Years Exp.</div></div>
+      <div class="rm-stat"><div class="rm-stat-num">3+</div><div class="rm-stat-lbl">Projects</div></div>
+      <div class="rm-stat"><div class="rm-stat-num">5+</div><div class="rm-stat-lbl">Certs</div></div>
+      <div class="rm-stat"><div class="rm-stat-num">3.94</div><div class="rm-stat-lbl">MCS CGPA</div></div>
+    </div>
+  </div>
+
+  <div class="rm-body">
+
+    <!-- SUMMARY -->
+    <div class="rm-section">
+      <div class="rm-section-title">✦ Professional Summary</div>
+      <div class="rm-cards">
+        <div class="rm-card" style="grid-column:1/-1"><div class="rm-card-shine"></div>
+          <p>Results-driven QA Engineer with <strong>4+ years</strong> ensuring software quality in the <strong>US healthcare domain</strong>. Specialized in functional, regression, smoke, API &amp; performance testing for Payment Technology. Proven track record of independently leading full QA lifecycles, mentoring junior engineers, and delivering high-quality products. Currently pursuing <strong>MCS with CGPA 3.94/4.00</strong>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="rm-section">
+      <div class="rm-section-title">💼 Work Experience</div>
+      <div class="rm-timeline">
+        <div class="rm-tl-item">
+          <div class="rm-tl-role">Software QA Engineer</div>
+          <div class="rm-tl-co">Cedar Gate Technologies · Nepal</div>
+          <div class="rm-tl-date">Feb 2024 – Present</div>
+          <ul class="rm-tl-list">
+            <li>Functional &amp; regression testing of US healthcare Payment Technology application</li>
+            <li>Comprehensive API Testing using Postman &amp; Newman</li>
+            <li>Bug identification and reporting using Veracode security tool</li>
+            <li>Independently led QA for the Data De-Identification project (Jetstore collaboration)</li>
+            <li>Trained and mentored new junior QA engineers</li>
+            <li>Cross-functional collaboration for timely issue resolution</li>
+          </ul>
+        </div>
+        <div class="rm-tl-item">
+          <div class="rm-tl-role">Associate Software QA Engineer</div>
+          <div class="rm-tl-co">Cedar Gate Technologies · Nepal</div>
+          <div class="rm-tl-date">Feb 2023 – Feb 2024</div>
+          <ul class="rm-tl-list">
+            <li>Functional, regression &amp; smoke testing of US healthcare payment application</li>
+            <li>Defect identification, documentation &amp; reporting via Veracode</li>
+            <li>Cross-team collaboration for prompt issue resolution</li>
+          </ul>
+        </div>
+        <div class="rm-tl-item">
+          <div class="rm-tl-role">Computer Science Lecturer</div>
+          <div class="rm-tl-co">New Millennium School · Nepal</div>
+          <div class="rm-tl-date">Jan 2022 – Feb 2023</div>
+          <ul class="rm-tl-list">
+            <li>Developed tailored learning plans, assessments &amp; practical lab activities</li>
+            <li>Mentored students — bridging theory &amp; real-world tech application</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="rm-section">
+      <div class="rm-section-title">⚙️ Technical Skills</div>
+      <div class="rm-cards">
+        <div class="rm-card"><div class="rm-card-shine"></div>
+          <div class="rm-card-icon">🧪</div>
+          <h4>Testing Methods</h4>
+          <div class="rm-pills">
+            <span class="rm-pill">Functional</span><span class="rm-pill">Regression</span>
+            <span class="rm-pill">Smoke</span><span class="rm-pill">API Testing</span>
+            <span class="rm-pill">Performance</span><span class="rm-pill">Exploratory</span>
+          </div>
+        </div>
+        <div class="rm-card"><div class="rm-card-shine"></div>
+          <div class="rm-card-icon">🛠️</div>
+          <h4>Tools &amp; Platforms</h4>
+          <div class="rm-pills">
+            <span class="rm-pill">Selenium</span><span class="rm-pill">Postman</span>
+            <span class="rm-pill">Newman</span><span class="rm-pill">JMeter</span>
+            <span class="rm-pill">Veracode</span>
+          </div>
+        </div>
+        <div class="rm-card"><div class="rm-card-shine"></div>
+          <div class="rm-card-icon">🗄️</div>
+          <h4>Data &amp; Documentation</h4>
+          <div class="rm-pills">
+            <span class="rm-pill">SQL Queries</span><span class="rm-pill">Test Planning</span>
+            <span class="rm-pill">Bug Reports</span><span class="rm-pill">Test Cases</span>
+          </div>
+        </div>
+        <div class="rm-card"><div class="rm-card-shine"></div>
+          <div class="rm-card-icon">🏥</div>
+          <h4>Domain Expertise</h4>
+          <div class="rm-pills">
+            <span class="rm-pill">US Healthcare</span><span class="rm-pill">Payment Tech</span>
+            <span class="rm-pill">Data De-ID</span><span class="rm-pill">EDI</span>
+            <span class="rm-pill">HIPAA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="rm-section">
+      <div class="rm-section-title">🎓 Education</div>
+      <div class="rm-edu-card">
+        <div class="rm-edu-degree">Master of Computer Science (MCS) — In Progress</div>
+        <div class="rm-edu-inst">Phoenix College of Management · Lincoln University College, Malaysia</div>
+        <div class="rm-edu-detail">March 2024 – Expected 2026 &nbsp;|&nbsp; CGPA: <strong>3.94 / 4.00</strong> &nbsp;|&nbsp; Semesters 1–3 Completed · Distinction in Sem 2 &amp; 3</div>
+      </div>
+      <div class="rm-edu-card">
+        <div class="rm-edu-degree">B.Sc. Computer Science &amp; Information Technology — Completed 2020</div>
+        <div class="rm-edu-inst">Trinity International College · Tribhuvan University, Kathmandu</div>
+        <div class="rm-edu-detail">2016 – 2020 &nbsp;|&nbsp; Percentage: <strong>65.79%</strong> &nbsp;|&nbsp; T.U. Reg: 5-2-354-36-2016</div>
+      </div>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="rm-section">
+      <div class="rm-section-title">🏆 Certifications</div>
+      <div class="rm-cert-list">
+        <div class="rm-cert-item"><span class="rm-cert-icon">🤖</span><div><div class="rm-cert-name">QA Automation Training</div><div class="rm-cert-detail">Cedar Gate Technologies — Mentors Club · June 2023 · 20 Hours</div></div></div>
+        <div class="rm-cert-item"><span class="rm-cert-icon">🔗</span><div><div class="rm-cert-name">EDI Workshop Certification</div><div class="rm-cert-detail">Cedar Gate Technologies — Mentors Club · June 2023 · 6.5 Hours</div></div></div>
+        <div class="rm-cert-item"><span class="rm-cert-icon">🗄️</span><div><div class="rm-cert-name">SQL for Testers</div><div class="rm-cert-detail">LinkedIn Learning · May 18, 2024 · 1hr 33min</div></div></div>
+        <div class="rm-cert-item"><span class="rm-cert-icon">🛡️</span><div><div class="rm-cert-name">2025 Proofpoint Overview Training</div><div class="rm-cert-detail">Cedar Gate Technologies · Feb 04, 2025</div></div></div>
+        <div class="rm-cert-item"><span class="rm-cert-icon">🔐</span><div><div class="rm-cert-name">2025 Annual Security Policy Training</div><div class="rm-cert-detail">Cedar Gate Technologies · Nov 17, 2025 · Edition 2.0 Revamped</div></div></div>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="rm-section">
+      <div class="rm-section-title">🚀 Key Projects</div>
+      <div class="rm-cards">
+        <div class="rm-card"><div class="rm-card-shine"></div>
+          <div class="rm-card-icon">🏥</div>
+          <h4>Payment Technology Application</h4>
+          <p>End-to-end QA of a US healthcare payment platform — functional, regression, smoke &amp; API testing across multiple release cycles.</p>
+        </div>
+        <div class="rm-card"><div class="rm-card-shine"></div>
+          <div class="rm-card-icon">🔐</div>
+          <h4>Data De-Identification Project</h4>
+          <p>Independent QA lead for Jetstore collaboration — full QA lifecycle management with SQL data validation for compliance.</p>
+        </div>
+        <div class="rm-card"><div class="rm-card-shine"></div>
+          <div class="rm-card-icon">📡</div>
+          <h4>EDI Healthcare Integration</h4>
+          <p>Applied specialized EDI expertise to test healthcare data integrations ensuring compliant data exchange in the US ecosystem.</p>
+        </div>
+        <div class="rm-card"><div class="rm-card-shine"></div>
+          <div class="rm-card-icon">🎓</div>
+          <h4>CS Education Curriculum</h4>
+          <p>Designed comprehensive curriculum with practical labs &amp; mentoring programs at New Millennium School.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOWNLOAD -->
+    <button class="rm-download-btn" onclick="downloadResumePDF()">
+      <span class="dl-icon">⬇</span>
+      Download Resume
+    </button>
+
+  </div><!-- /rm-body -->
+</div><!-- /resume-modal -->
+</div><!-- /resume-overlay -->
+
+
+<!-- ===== ASK SAROJ AI CHATBOT v5 — FUTURISTIC ===== -->
+
+<div id="sc-backdrop" onclick="scClose()"></div>
+<div id="sc-panel" role="dialog" aria-modal="true" aria-label="Ask Saroj AI">
+  <!-- HEADER -->
+  <div class="sc-head">
+    <div class="sc-orb sc-orb-1"></div>
+    <div class="sc-orb sc-orb-2"></div>
+    <div class="sc-orb sc-orb-3"></div>
+    <div class="sc-head-avatar">
+      <img src="photo1_web.jpg" alt="Saroj" onerror="this.style.display='none'">
+      <span class="sc-online"></span>
+    </div>
+    <div class="sc-head-info">
+      <div class="sc-head-name">Ask <em>Saroj</em> AI</div>
+      <div class="sc-head-sub"><span class="sc-dot-live"></span> CS &amp; QA Expert · Powered by Claude · Always Online</div>
+    </div>
+    <div class="sc-head-actions">
+      <button class="sc-head-close" onclick="scClose()" aria-label="Close">✕</button>
+    </div>
+    <div class="sc-head-scanline"></div>
+  </div>
+
+  <!-- BODY -->
+  <div class="sc-body">
+    <!-- SIDEBAR -->
+    <div class="sc-sidebar">
+      <div class="sc-sb-title">About Saroj</div>
+      <div class="sc-chip-group">
+        <button class="sc-chip" onclick="scChip('Tell me about Saroj\'s QA experience and background')">💼 Experience</button>
+        <button class="sc-chip" onclick="scChip('What are Saroj\'s technical skills and tools?')">🛠️ Skills & Tools</button>
+        <button class="sc-chip" onclick="scChip('Tell me about Saroj\'s projects in detail')">🚀 Projects</button>
+        <button class="sc-chip" onclick="scChip('What certifications does Saroj have?')">🎓 Certifications</button>
+        <button class="sc-chip" onclick="scChip('How can I contact or hire Saroj?')">📬 Hire / Contact</button>
+      </div>
+      <div class="sc-sb-divider"></div>
+      <div class="sc-sb-title">QA Knowledge</div>
+      <div class="sc-chip-group">
+        <button class="sc-chip" onclick="scChip('Explain API testing in depth with examples')">🔌 API Testing</button>
+        <button class="sc-chip" onclick="scChip('Cypress vs Selenium — which is better and why?')">⚙️ Cypress vs Selenium</button>
+        <button class="sc-chip" onclick="scChip('Explain smoke, sanity, and regression testing differences')">🧪 Testing Types</button>
+        <button class="sc-chip" onclick="scChip('How does QA work inside Agile/Scrum sprints?')">🏃 Agile QA</button>
+        <button class="sc-chip" onclick="scChip('How do you write a perfect bug report?')">🐛 Bug Reports</button>
+      </div>
+      <div class="sc-sb-divider"></div>
+      <div class="sc-sb-title">Computer Science</div>
+      <div class="sc-chip-group">
+        <button class="sc-chip" onclick="scChip('Explain DBMS — what is it and what are the key concepts?')">🗄️ DBMS</button>
+        <button class="sc-chip" onclick="scChip('Explain data structures: arrays, linked lists, trees, graphs')">🌳 Data Structures</button>
+        <button class="sc-chip" onclick="scChip('What is OOP and explain its four pillars with examples?')">🧱 OOP Concepts</button>
+        <button class="sc-chip" onclick="scChip('Explain SQL joins, indexes, and query optimization')">📊 SQL & Databases</button>
+        <button class="sc-chip" onclick="scChip('What is CI/CD and how does it work in DevOps?')">🔄 CI/CD & DevOps</button>
+        <button class="sc-chip" onclick="scChip('Explain REST API design principles and best practices')">🌐 REST APIs</button>
+        <button class="sc-chip" onclick="scChip('How does Git version control work? Key commands explained')">🔀 Git & Version Control</button>
+      </div>
+      <div class="sc-sb-divider"></div>
+      <div class="sc-sb-title">Quick Stats</div>
+      <div class="sc-stat">
+        <div class="sc-stat-icon">⏱️</div>
+        <div class="sc-stat-info">
+          <div class="sc-stat-val">4+ Years</div>
+          <div class="sc-stat-label">QA Experience</div>
+        </div>
+      </div>
+      <div class="sc-stat">
+        <div class="sc-stat-icon">🏥</div>
+        <div class="sc-stat-info">
+          <div class="sc-stat-val">Healthcare</div>
+          <div class="sc-stat-label">Domain Expert</div>
+        </div>
+      </div>
+      <div class="sc-stat">
+        <div class="sc-stat-icon">🎓</div>
+        <div class="sc-stat-info">
+          <div class="sc-stat-val">5 Certs</div>
+          <div class="sc-stat-label">QA · Security · SQL</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="sc-main">
+      <div id="sc-msgs">
+        <div class="sc-ts" id="sc-ts-init"></div>
+      </div>
+      <div class="sc-input-row">
+        <textarea id="sc-input" placeholder="Ask about Saroj, QA, DBMS, coding, computer science…" rows="1"
+          onkeydown="scKeyDown(event)" oninput="scResize(this)"></textarea>
+        <button class="sc-send-btn" id="sc-send-btn" onclick="scSend()" aria-label="Send">
+          <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+      <div class="sc-foot">Powered by <b>Claude AI</b> · CS, QA, Coding, Automation &amp; More</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== END ASK SAROJ AI v5 ===== -->
+
+  <script src="main.js"></script>
+</body>
+</html>
